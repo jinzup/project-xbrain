@@ -100,6 +100,14 @@ public class Order implements Serializable {
         return sum;
     }
 
+    public Double getAverage(){
+        double sum = 0.0;
+        for (OrderItem x : items){
+            sum += x.getSubTotal();
+        }
+        return sum / items.size();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
